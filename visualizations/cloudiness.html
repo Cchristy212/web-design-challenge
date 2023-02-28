@@ -1,105 +1,112 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<head>
 
-    <!-- Add a title here -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- Boostrap Stylesheet -->
-    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" media="screen">
+  <!-- Add a title here -->
 
-    <!-- Our own CSS stylesheet -->
-    <link rel="stylesheet" href="../assets/css/styles.css" media="screen">
+  <!-- Boostrap Stylesheet -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-    <title>Cloudiness</title>
-  </head>
-  <body>
+  <!-- Our own CSS stylesheet -->
+  <link rel="stylesheet" href="../assets/css/styles.css" media="screen">
+
+  <title>Cloudiness</title>
+</head>
+
+<body>
   <!--Create Navbar-->
   <!--Note: class media-query-navbar-color in <nav> class to change full navbar color when on small media screen-->
   <!--Note: class nav-bar-brand-color in <a> tag is to change the brand header "Lattitude" is to create padding around the text itself, change font &font color, change background color. -->
-    <nav class="media-query-navbar-color navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class=" navbar-brand-color " href="index.html">Latitude</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="comparison.html">Comparison</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="data.html">Data</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Plots
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="temperature.html">Max temperature</a></li>
-                <li><a class="dropdown-item" href="humidity.html">Humidity</a></li>
-                <li><a class="dropdown-item" href="cloudiness.html">Cloudiness</a></li>
-                <li><a class="dropdown-item" href="windspeed.html">Wind Speed</a></li>
-              </ul>
-            </li>
-          </ul>
+  <nav class="media-query-navbar-color navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class=" navbar-brand-color " href="../index.html">Latitude</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="../comparison.html">Comparison</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="../data.html">Data</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Plots
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="temp.html">Max temperature</a></li>
+              <li><a class="dropdown-item" href="humidity.html">Humidity</a></li>
+              <li><a class="dropdown-item" href="cloudiness.html">Cloudiness</a></li>
+              <li><a class="dropdown-item" href="wind.html">Wind Speed</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <br>
+  <!--Create container with a single row. Create 2 uneven columns at medium screen size. Create a single column spanning the full screen at small screen size.  -->
+  <div class="container">
+    <section class="row">
+      <div class="col-md-8 col-sm-12">
+        <!--note: can use mutltiple classes within the same string ""-->
+        <h2 class="text-left visualization-font-color"> Cloudiness </h2>
+        <hr class="my-4">
+        <!--Embed photo, set class img-fluid for sizing to be responsive -->
+        <img src="../assets/images/Fig3.png" class="img-fluid" alt="Latitude vs Cloudiness">
+        <p> The above scatterplot measures city latitude versus cloudiness. There does not seeem to be a clear
+          relationship between city latitude and cloudiness. An exampple of this can be seen in how cities between (+/-)
+          40 degrees in latitude show the same spread of cloudiness in this time period.</p>
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <h2 class="text-right visualization-font-color">Visualizations </h2>
+        <hr class="my-4">
+        <div class="visual-container">
+          <div class="images">
+            <!--Create images that link to the plot page. Adjust image sizes so they fit appropriately within the grid.  -->
+            <!--Use class border border-info  to use Bootstrap 5 border styling around desired image-->
+            <!--Note: set fixed height and width of photos here so that all 4 can equally display within a grid. Using class img-fluid allows them to adjust to screen width, creating a stacked effect-->
+            <a href="temp.html"><img src="../assets/images/Fig1.png" width="200px" height="200px"
+                alt="latitude vs Max Temp"></a>
+            <a href="cloudiness.html"><img class="../border border-info border-2" src="../assets/images/Fig3.png"
+                width="200px" height="200px" alt="latitude vs Max Temp"></a>
+            <a href="wind.html"><img src="../assets/images/Fig4.png" width="200px" height="200px"
+                alt="latitude vs Max Temp"></a>
+            <a href="humidity.html"><img src="../assets/images/Fig2.png" width="200px" height="200px"
+                alt="latitude vs Max Temp"></a>
+          </div>
         </div>
-      </div>
-    </nav>
-
-
-      <br>
-      <!--Create container with a single row. Create 2 uneven columns at medium screen size. Create a single column spanning the full screen at small screen size.  -->
-      <div class = "container">
-          <section class = "row">
-            <div class= "col-md-8 col-sm-12">
-              <!--note: can use mutltiple classes within the same string ""-->
-                <h2 class="text-left visualization-font-color"> Cloudiness </h2>
-                <hr class="my-4">
-                <!--Embed photo, set class img-fluid for sizing to be responsive -->
-                <img src="assets/Lat_vs_Cloudiness.png" class ="img-fluid"alt="Latitude vs Cloudiness">
-                <p> The above scatterplot measures city latitude versus cloudiness. There does not seeem to be a clear relationship between city latitude and cloudiness. An exampple of this can be seen in how cities between (+/-) 40 degrees in latitude show the same spread of cloudiness in this time period.</p>
-            </div>
-            <div class= "col-md-4 col-sm-12">
-                <h2 class="text-right visualization-font-color">Visualizations </h2>
-                <hr class="my-4">
-                <div class = "visual-container">
-                    <div class="images">
-                      <!--Create images that link to the plot page. Adjust image sizes so they fit appropriately within the grid.  -->
-                      <!--Use class border border-info  to use Bootstrap 5 border styling around desired image-->
-                      <!--Note: set fixed height and width of photos here so that all 4 can equally display within a grid. Using class img-fluid allows them to adjust to screen width, creating a stacked effect-->
-                      <a href="temperature.html"><img src="assets/Lat_vs_MaxTemp.png" width="200px" height="200px" alt="latitude vs Max Temp"></a>
-                      <a href="cloudiness.html"><img class="border border-info border-2"src="assets/Lat_vs_Cloudiness.png" width="200px" height="200px" alt="latitude vs Max Temp"></a>
-                      <a href="windspeed.html"><img src="assets/Lat_vs_Windspeed.png"  width="200px" height="200px" alt="latitude vs Max Temp"></a>
-                      <a href="humidity.html"><img src="assets/Lat_vs_Humidity.png" width ="200px" height="200px"alt="latitude vs Max Temp"></a>
-                   </div>
-              </div>
-
-            </div>
-              
-
-          </section>
 
       </div>
 
-    <!-- Start of navbar -->
-    <!-- End of navbar -->
 
-    <!-- Start of container -->
+    </section>
 
-          <!-- Start of Visualizations imageNav Area -->
-          <!-- End of the Visualizations imageNav Area -->
+  </div>
 
-    <!-- End of container -->
+  <!-- End of the Visualizations imageNav Area -->
 
-    <!-- jQuery CDN -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <!-- End of container -->
 
-    <!-- Bootstrap CDN -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  </body>
+  <!-- jQuery CDN -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+  <!-- Bootstrap CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+    integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+    crossorigin="anonymous"></script>
+</body>
 
 </html>
